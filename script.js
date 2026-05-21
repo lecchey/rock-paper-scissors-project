@@ -1,5 +1,5 @@
 let humanScore = 0;
-letcomputerScore = 0;
+let computerScore = 0;
 
 
 function getComputerChoice() {
@@ -17,7 +17,7 @@ console.log(getComputerChoice());
 
 
 function getHumanChoice() {
-    let result = prompt("Choose your fighter! Rock, Paper, or Scissors.", " ").toLowerCase();
+    const result = prompt("Choose your fighter! Rock, Paper, or Scissors.", " ").toLowerCase();
 
      if (result == "rock") {
         return "rock";
@@ -30,3 +30,8 @@ function getHumanChoice() {
     }
 }
 console.log(getHumanChoice());
+
+
+function playRound(humanChoice, computerChoice) {
+    
+}
