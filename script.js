@@ -17,26 +17,25 @@ console.log(getComputerChoice());
 
 
 function getHumanChoice() {
-    const result = prompt("Choose your fighter! Rock, Paper, or Scissors.", " ");
+    const humanChoice = prompt("Choose your fighter! Rock, Paper, or Scissors.", " ").toLowerCase();
 
-     if (result == "rock") {
+    if (humanChoice == "rock") {
         return "rock";
-    } else if (result == "paper") {
+    } else if (humanChoice == "paper") {
         return "paper";
-    } else if (result == "scissors") {
+    } else if (humanChoice == "scissors") {
         return "scissors";
-    } else {
-        return "Invalid";
     }
 }
 console.log(getHumanChoice());
 
 
 function playRound(humanChoice, computerChoice) {
-    const human = humanChoice.toLowerCase();
-    const computer = computerChoice.toLowerCase();
-
-    if (
+    const human = humanChoice;
+    const computer = computerChoice;
+    if (human === computer) {
+        return "It's a tie!";
+    } else if (
         (human === "rock" && computer === "scissors") ||
         (human === "scissors" && computer === "paper") ||
         (human === "paper" && computer === "rock") 
@@ -46,4 +45,4 @@ function playRound(humanChoice, computerChoice) {
         return "You lose! " + computer + " beats " + human;
     }
 }
-
+console.log(playRound(human, computer));
