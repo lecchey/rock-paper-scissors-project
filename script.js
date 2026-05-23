@@ -42,17 +42,24 @@ function playRound(humanChoice, computerChoice) {
         (human === "scissors" && computer === "paper") ||
         (human === "paper" && computer === "rock") 
     ) {
+        humanScore++;
         return "You win! " + human + " beats " + computer;
     } else if (
         (computer === "rock" && human === "scissors") ||
         (computer === "scissors" && human === "paper") ||
         (computer === "paper" && human === "rock")
     ) {
+        computerScore++;
         return "You lose! " + computer + " beats " + human;
     }
+   
+
 }
 
 const human = humanChoice;
 const computer = computerChoice;
 
-console.log(playRound(human, computer));
+console.log(playRound(human, computer)); 
+
+console.log("Your score: " + humanScore);
+console.log("Computer's score: " + computerScore);
