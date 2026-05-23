@@ -15,7 +15,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
+const computerChoice = getComputerChoice();
+console.log("Computer chose " + computerChoice);
 
 function getHumanChoice() {
     const humanChoice = prompt("Choose your fighter! Rock, Paper, or Scissors.", " ").toLowerCase();
@@ -30,7 +31,7 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-
+const humanChoice = getHumanChoice();
 
 function playRound(humanChoice, computerChoice) {
     
@@ -42,11 +43,16 @@ function playRound(humanChoice, computerChoice) {
         (human === "paper" && computer === "rock") 
     ) {
         return "You win! " + human + " beats " + computer;
-    } else {
+    } else if (
+        (computer === "rock" && human === "scissors") ||
+        (computer === "scissors" && human === "paper") ||
+        (computer === "paper" && human === "rock")
+    ) {
         return "You lose! " + computer + " beats " + human;
     }
 }
-const human = getHumanChoice();
-const computer = getComputerChoice();
+
+const human = humanChoice;
+const computer = computerChoice;
 
 console.log(playRound(human, computer));
