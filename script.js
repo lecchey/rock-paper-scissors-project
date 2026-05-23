@@ -12,8 +12,9 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
+    return computerChoice;
 }
-console.log(getComputerChoice());
+
 
 
 function getHumanChoice() {
@@ -26,13 +27,13 @@ function getHumanChoice() {
     } else if (humanChoice == "scissors") {
         return "scissors";
     }
+    return humanChoice;
 }
-console.log(getHumanChoice());
+
 
 
 function playRound(humanChoice, computerChoice) {
-    const human = humanChoice;
-    const computer = computerChoice;
+    
     if (human === computer) {
         return "It's a tie!";
     } else if (
@@ -45,4 +46,7 @@ function playRound(humanChoice, computerChoice) {
         return "You lose! " + computer + " beats " + human;
     }
 }
+const human = getHumanChoice();
+const computer = getComputerChoice();
+
 console.log(playRound(human, computer));
